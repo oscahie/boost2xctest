@@ -1,8 +1,8 @@
 #  Boost2XCTest
 
-This project demonstrates how to easily integrate an existing unit test suite written for the Boost Test framework with Xcode and the XCTest framework. It allows leveraging Xcode's testing capabilities and visual tooling such as the test navigator UI, inline reporting of failures and debugging the test cases.
+This project demonstrates how to easily integrate an existing unit test suite written for the Boost Test framework with Xcode and the XCTest framework. It allows leveraging Xcode's testing capabilities and visual tooling such as the test navigator UI, inline reporting of failures, debugging the test cases, etc.
 
-The typical use case for this project is when you have a C/C++ library that is shared across various platforms (eg. iOS and Android), and which has its own set of unit tests written in C++ with Boost.Test. You then want to be able to run those test cases on the iOS simulator or even on a real iOS device, and Boost2XCTest will make this super easy and convenient to do from within Xcode, in exactly the same way you'd run test cases written in Swift or Objective-C for the XCTest framework. Of course running the Boost test suite from the command line via `xcodebuild` will also work as you'd expect.
+The typical use case for this project is a C/C++ library that is shared across various platforms (eg. iOS and Android), and which has its own set of unit tests written in C++ with Boost.Test. You may then want to be able to run those test cases on the iOS simulator or even on a real iOS device, and Boost2XCTest will make this super easy and convenient to do from within Xcode, in exactly the same way you'd run test cases written in Swift or Objective-C for the XCTest framework. Of course running the Boost test suite from the command line via `xcodebuild` will also work as you'd expect.
 
 ## How it works
 
@@ -10,7 +10,7 @@ Boost2XCTest is a custom Boost test runner that leverages the Objective-C runtim
 
 ## Integration
 
-Executing a Boost test suite with Xcode requires of two things: an _iOS Unit Test Bundle_ and a host iOS application. The test bundle must include all the source code for the Boost test cases, plus the *Boost2XCTest.mm* file. Naturally it must also link against the Boost framework or static library and against the library being tested. The host app or test launcher app is just an 'empty' application whose only function is to host the test bundle, thus a simple app created with the _Single View App_ template will do. Make sure to link the Unit Test bundle with the host app in the 'General' settings tab of the test bundle.
+Executing a Boost test suite with Xcode requires of two things: an _iOS Unit Test Bundle_ and a host iOS application. The test bundle must include all the source code for the Boost test cases, plus the `Boost2XCTest.mm` file. Naturally it must also link against the Boost framework or static library and against the library being tested. The host app or test launcher app is just an 'empty' application whose only function is to host the test bundle, thus a simple app created with the _Single View App_ template will do. Make sure to link the Unit Test bundle with the host app in the 'General' settings tab of the test bundle.
 
 Once the integration is ready, simply tell Xcode to run the test cases (⌘U) and after the first full run, the Test Navigator view should show a list of test suites and their test cases. You may then click on any individual test case to have it executed, or do the same for an entire test suite. 
 
