@@ -7,9 +7,8 @@
 #import "SampleLibrary.hpp"
 #import <boost/test/unit_test.hpp>
 
-
 // NOTE: This name must be unique within the entire test suite
-BOOST_AUTO_TEST_SUITE(SampleLibraryAPITests)
+BOOST_AUTO_TEST_SUITE(SampleLibraryTests)
 
 struct F {
     F() {};

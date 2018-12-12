@@ -10,7 +10,6 @@
 
 #define BOOST_TEST_NO_MAIN
 #define BOOST_TEST_ALTERNATIVE_INIT_API
-#define BOOST_TEST_MODULE UnitTests
 
 #include <boost/test/unit_test.hpp>
 #include <boost/test/unit_test_parameters.hpp>

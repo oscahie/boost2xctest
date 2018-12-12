@@ -10,7 +10,7 @@ Boost2XCTest is a custom Boost test runner that leverages the Objective-C runtim
 
 ## Integration
 
-Executing a Boost test suite with Xcode requires of two things: an _iOS Unit Test Bundle_ and a host iOS application. The test bundle must include all the source code for the Boost test cases, plus the *Boost2XCTest.mm* file. Naturally it must also link against the Boost framework or static library and against the library being tested. The host app or launcher app is just an 'empty' app whose only function is to host the test bundle, thus a simple app created with the _Single View App_ template will just do. Make sure to link the Unit Test bundle with the host app in the 'General' settings tab of the test bundle.
+Executing a Boost test suite with Xcode requires of two things: an _iOS Unit Test Bundle_ and a host iOS application. The test bundle must include all the source code for the Boost test cases, plus the *Boost2XCTest.mm* file. Naturally it must also link against the Boost framework or static library and against the library being tested. The host app or test launcher app is just an 'empty' application whose only function is to host the test bundle, thus a simple app created with the _Single View App_ template will do. Make sure to link the Unit Test bundle with the host app in the 'General' settings tab of the test bundle.
 
 Once the integration is ready, simply tell Xcode to run the test cases (⌘U) and after the first full run, the Test Navigator view should show a list of test suites and their test cases. You may then click on any individual test case to have it executed, or do the same for an entire test suite. 
 
@@ -20,7 +20,7 @@ Once the integration is ready, simply tell Xcode to run the test cases (⌘U) an
 
 * Each Boost test suite (eg: `BOOST_AUTO_TEST_SUITE(APITestSuite)`) must have a unique name, or else there will be name collisions between the generated `XCTestCase` subclasses. 
 * The Xcode Test navigator UI will list all the test cases correctly but it will not automatically navigate to the source code of each test case upon clicking on them. This only works for failed test cases, once they've reported an error. I don't believe there's a public API in the XCTest framework to achieve this but it _might_ be possible to do it using private APIs. Haven't really investigated much about it yet.
-* _Click-to-run_ on individual test cases from within the source code editor is not supported, since Xcode cannot recognize Boost test cases as XCTest test cases at that time. Instead use the Test navigator UI to trigger the execution of one or multiple  tests.
+* _Click-to-run_ on individual test cases from within the source code editor is not supported, since Xcode cannot recognize Boost test cases as XCTest test cases at compile time. Instead use the Test navigator UI to trigger the execution of one or multiple test cases.
 
 ## Links
 
